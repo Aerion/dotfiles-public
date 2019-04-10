@@ -156,7 +156,9 @@ There are two things you can do about this warning:
 (use-package company-quickhelp
   :requires company
   :config
-  (company-quickhelp-mode))
+  (company-quickhelp-mode)
+  :hook
+  (lsp-mode . company-quickhelp-mode))
 
 ;;; flycheck, linter
 (use-package flycheck
@@ -170,7 +172,22 @@ There are two things you can do about this warning:
   :requires flycheck
   :hook (flycheck-mode . flycheck-inline-mode))
 
-;;; c# setup
+;;; Programming
+
+;; lsp
+(use-package lsp-mode
+  :commands lsp
+  :hook (python-mode . lsp))
+
+(use-package lsp-ui
+  :requires lsp-mode
+  :commands lsp-ui-mode)
+
+(use-package company-lsp
+  :requires lsp-mode
+  :commands company-lsp)
+
+;; c#
 (use-package omnisharp
   :requires (company flycheck)
   :hook
