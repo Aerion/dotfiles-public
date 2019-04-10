@@ -88,8 +88,8 @@ There are two things you can do about this warning:
 ;;; magit, the all-in-one git interface
 (use-package magit
   :config
-  ((set-default 'magit-stage-all-confirm nil)
-   (global-unset-key (kbd "C-x g")))
+  (set-default 'magit-stage-all-confirm nil)
+  (global-unset-key (kbd "C-x g"))
   :hook
   (magit-mode . magit-load-config-extensions)
   :bind
