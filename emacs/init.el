@@ -178,6 +178,19 @@ There are two things you can do about this warning:
   :config
   (add-to-list 'company-backends 'company-omnisharp))
 
+;;; Backups
+(defvar backup-directory "~/.emacs-backups")
+(if (not (file-exists-p backup-directory))
+    (make-directory backup-directory t))
+(setq
+ make-backup-files t        ; backup a file the first time it is saved
+ backup-directory-alist `((".*" . ,backup-directory)) ; save backup files in configured directory
+ backup-by-copying t     ; copy the current file into backup directory
+ version-control t   ; version numbers for backup files
+ delete-old-versions t   ; delete unnecessary versions
+ auto-save-default t ; auto-save every buffer that visits a file
+ )
+
 ;;; Graphics
 
 ;; display line numbers
