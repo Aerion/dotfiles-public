@@ -12,7 +12,7 @@
  '(nlinum-highlight-current-line t)
  '(package-selected-packages
    (quote
-    (omnisharp flycheck-inline flycheck-color-mode-line flycheck company ssh-agency nlinum helm-swoop helm magit git-timemachine golden-ratio crux smart-mode-line highlight-numbers dracula-theme darcula-theme visual-regexp-steroids visual-regexp expand-region use-package))))
+    (company-quickhelp omnisharp flycheck-inline flycheck-color-mode-line flycheck company ssh-agency nlinum helm-swoop helm magit git-timemachine golden-ratio crux smart-mode-line highlight-numbers dracula-theme darcula-theme visual-regexp-steroids visual-regexp expand-region use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -151,6 +151,12 @@ There are two things you can do about this warning:
   :bind ("C-c c" . company-complete-common)
   :config
   (global-company-mode))
+
+;; display documentation popup on autocomplete
+(use-package company-quickhelp
+  :requires company
+  :config
+  (company-quickhelp-mode))
 
 ;;; flycheck, linter
 (use-package flycheck
