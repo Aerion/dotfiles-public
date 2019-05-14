@@ -195,6 +195,14 @@ There are two things you can do about this warning:
   :config
   (add-to-list 'company-backends 'company-omnisharp))
 
+;; Markdown
+(use-package markdown-mode
+  :ensure t
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
+
 ;;; Backups
 (defvar backup-directory "~/.emacs-backups")
 (if (not (file-exists-p backup-directory))
