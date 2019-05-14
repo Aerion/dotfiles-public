@@ -203,6 +203,10 @@ There are two things you can do about this warning:
          ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
 
+;; YAML
+(use-package yaml-mode
+  :mode (("\\.yaml\\'" . yaml-mode)
+         ("\\.yml\\'" . yaml-mode)))
 ;;; Backups
 (defvar backup-directory "~/.emacs-backups")
 (if (not (file-exists-p backup-directory))
