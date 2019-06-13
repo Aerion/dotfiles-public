@@ -3,3 +3,9 @@
 /emacs/.emacs.d/recentf
 /emacs/.emacs.d/tramp
 /emacs/.emacs.d/transient
+/fish/.config/fish/completions/fisher.fish
+/fish/.config/fish/conf.d/*fzf*
+/fish/.config/fish/conf.d/plugin-bang-bang_key_bindings.fish
+/fish/.config/fish/conf.d/z.fish
+/fish/.config/fish/functions/__*
+/fish/.config/fish/functions/fisher.fish
