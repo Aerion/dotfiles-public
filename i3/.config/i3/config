@@ -228,10 +228,13 @@ assign [class="^Skype$"] $ws3
 assign [class="^Rambox*"] $ws3
 assign [class="^Thunderbird$"] $ws4
 assign [class="^mpv$"] $ws0
-assign [class="^MellowPlayer$"] $ws0
+assign [class="^MellowPlayer$"] $ws5
 assign [class="^keepassxc$"] $ws7
 assign [title="^[sS]team$"] $ws9
 assign [class="^Slay the Spire$"] $ws9
+assign [class="^looking-glass-client$"] $ws0
+
+workspace $ws0 output DVI-D-2
 
 # Startup applications
 exec_always --no-startup-id ~/.scripts/launch_polybar.sh
