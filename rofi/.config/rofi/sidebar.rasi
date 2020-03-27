@@ -1,0 +1,7 @@
+configuration {
+    theme:                          "android_notification";
+    window-format:                  "{t}";
+    show-icons:                     true;
+    font:                           "lucy tewi 8";
+    columns:                        4;
+}

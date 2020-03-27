@@ -57,7 +57,10 @@ bindsym Control_R+Return exec $term_name
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec rofi -theme /usr/share/rofi/themes/android_notification.rasi -show run
+bindsym $mod+d exec rofi -theme android_notification.rasi -show run
+
+# List windows and jump to one of them
+bindsym $mod+Tab exec rofi -show window -modi window -theme android_notification.rasi
 
 # start splatmoji https://github.com/cspeterson/splatmoji
 bindsym $mod+slash exec "splatmoji type"
