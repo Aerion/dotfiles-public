@@ -1,0 +1,20 @@
+#!/bin/sh
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
+    echo "usage: $(basename "$0") <brightness_percentage>"
+    exit 0
+fi
+
+if ! command -v ddcutil >/dev/null 2>&1; then
+    echo >&2 "ddcutil not installed, aborting"
+    exit 1
+fi
+
+BRIGHTNESS_CODE=10
+monitors="1 2"
+brightness_percent="$1"
+
+for monitor_idx in $monitors; do
+    echo "setting brightness to monitor $monitor_idx"
+    sudo ddcutil -d "$monitor_idx" set $BRIGHTNESS_CODE "$brightness_percent"
+done
