@@ -242,8 +242,9 @@ There are two things you can do about this warning:
   (sml/setup))
 
 ;; theme
-(use-package dracula-theme
-  :config (load-theme 'dracula t))
+(if (display-graphic-p)
+    (use-package dracula-theme
+      :config (load-theme 'dracula t)))
 
 ;; remove unwanted bars
 (menu-bar-mode -1)
