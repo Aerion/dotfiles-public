@@ -12,7 +12,7 @@
  '(nlinum-highlight-current-line t)
  '(package-selected-packages
    (quote
-    (company-quickhelp omnisharp flycheck-inline flycheck-color-mode-line flycheck company ssh-agency nlinum helm-swoop helm magit git-timemachine golden-ratio crux smart-mode-line highlight-numbers dracula-theme darcula-theme visual-regexp-steroids visual-regexp expand-region use-package))))
+    (web-mode webmode php-mode dap-mode dap-python pyvenv pyenv ace-jump-mode pandoc-mode company-quickhelp omnisharp flycheck-inline flycheck-color-mode-line flycheck company ssh-agency nlinum helm-swoop helm magit git-timemachine golden-ratio crux smart-mode-line highlight-numbers dracula-theme darcula-theme visual-regexp-steroids visual-regexp expand-region use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -76,6 +76,11 @@ There are two things you can do about this warning:
 
 ;; short answers for yes/no questions
 (fset 'yes-or-no-p 'y-or-n-p)
+
+;; ace-jump, jump to character
+(global-unset-key (kbd "M-$"))
+(use-package ace-jump-mode
+  :bind ("M-$" . ace-jump-mode))
 
 ;; easily navigate in file history
 (use-package git-timemachine)
@@ -182,6 +187,13 @@ There are two things you can do about this warning:
   :requires lsp-mode
   :commands company-lsp)
 
+;; python
+
+(use-package pyvenv)
+;; pip install "ptvsd>=4.2"
+(use-package dap-mode)
+(require 'dap-python)
+
 ;; c#
 (use-package omnisharp
   :requires (company flycheck)
@@ -189,6 +201,9 @@ There are two things you can do about this warning:
   (csharp-mode . omnisharp-mode)
   :config
   (add-to-list 'company-backends 'company-omnisharp))
+
+;; php
+(use-package php-mode)
 
 ;; Markdown
 (use-package markdown-mode
