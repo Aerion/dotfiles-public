@@ -218,7 +218,7 @@ client.focused_inactive $base01 $base01 $base05 $base03 $base01
 client.unfocused        $base01 $base00 $base05 $base01 $base01
 client.urgent           $base08 $base08 $base00 $base08 $base08
 client.placeholder      $base00 $base00 $base05 $base00 $base00
-client.background $base07
+client.background #000
 
 # Gaps
 smart_gaps on
@@ -227,15 +227,18 @@ smart_borders on
 # Windows border
 new_window pixel 1
 
+# Change tiling for specific applications
+for_window [class="Yad" title="yad-calendar"] floating enable
+
 # Specific workspaces
 assign [class="^[cC]hromium$"] $ws2
-assign [class="^Firefox$"] $ws2
+assign [class="^[fF]irefox$"] $ws2
 assign [class="^Skype$"] $ws3
 assign [class="^Rambox*"] $ws3
 assign [class="^Thunderbird$"] $ws4
 assign [class="^mpv$"] $ws0
-assign [class="^MellowPlayer$"] $ws5
-assign [class="^keepassxc$"] $ws7
+assign [class="^MellowPlayer.?$"] $ws5
+assign [class="^KeePassXC"] $ws7
 assign [title="^[sS]team$"] $ws9
 assign [class="^Slay the Spire$"] $ws9
 assign [class="^looking-glass-client$"] $ws0
