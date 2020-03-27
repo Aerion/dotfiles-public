@@ -207,6 +207,11 @@ There are two things you can do about this warning:
 (use-package yaml-mode
   :mode (("\\.yaml\\'" . yaml-mode)
          ("\\.yml\\'" . yaml-mode)))
+
+;; compilation
+(setq compilation-read-command nil)
+(global-set-key "\C-x\C-m" 'recompile)
+
 ;;; Backups
 (defvar backup-directory "~/.emacs-backups")
 (if (not (file-exists-p backup-directory))
