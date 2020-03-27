@@ -70,11 +70,6 @@ There are two things you can do about this warning:
 ;; follow symbolic links without being prompted
 (setq vc-follow-symlinks t)
 
-;; better kill line
-(use-package crux
-  :bind
-  (("C-k" . crux-smart-kill-line)))
-
 ;; disable inserting tabs
 (setq-default indent-tabs-mode nil)
 (setq-default tabs-width 0)
