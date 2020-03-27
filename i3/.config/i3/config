@@ -63,7 +63,10 @@ bindsym $mod+d exec rofi -theme android_notification.rasi -show run
 bindsym $mod+Tab exec rofi -show window -modi window -theme android_notification.rasi
 
 # start splatmoji https://github.com/cspeterson/splatmoji
-bindsym $mod+slash exec "splatmoji type"
+bindcode $mod+59 exec "splatmoji type"
+
+# Keepmenu
+bindsym $mod+slash exec keepmenu
 
 # change focus
 bindsym $mod+$left focus left
