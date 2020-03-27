@@ -52,7 +52,7 @@ font-4 = "Font Awesome 5 Brands:style=Regular:pixelsize=10;0"
 ;font-3 = fixed:pixelsize=10;0
 ;font-4 = Unifont Upper:fontformat=truetype:size=8:antialias=false;0
 
-modules-left = date i3
+modules-left = popup-calendar i3
 modules-center = xwindow
 modules-right = updates-arch-combined-timer updates-arch-combined volume load-average mem2 cpu2 eth
 
@@ -410,6 +410,12 @@ interval = 3
 click-left = playerctl previous
 click-right = playerctl next
 click-middle = playerctl play-pause
+
+[module/popup-calendar]
+type = custom/script
+exec = ~/.config/polybar/scripts/polybar-scripts/polybar-scripts/popup-calendar/popup-calendar.sh "%a %d/%m %H:%M:%S"
+interval = 5
+click-left = ~/.config/polybar/scripts/polybar-scripts/polybar-scripts/popup-calendar/popup-calendar.sh --popup
 
 [settings]
 screenchange-reload = true
