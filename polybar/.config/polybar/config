@@ -405,7 +405,7 @@ format-prefix = ""
 
 [module/player-mpris-tail]
 type = custom/script
-exec = ~/.config/polybar/scripts/player-mpris-tail.py -f '{:t40:{title}:}'
+exec = ~/.config/polybar/scripts/player-mpris-tail.py -f ' {:t40:{title}:}'
 tail = true
 click-left = ~/polybar-scripts/player-mpris-tail.py previous &
 click-right = ~/polybar-scripts/player-mpris-tail.py next &
