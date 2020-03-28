@@ -257,9 +257,8 @@ There are two things you can do about this warning:
   (sml/setup))
 
 ;; theme
-(if (display-graphic-p)
-    (use-package dracula-theme
-      :config (load-theme 'dracula t)))
+(use-package dracula-theme
+  :config (load-theme 'dracula t))
 
 ;; remove unwanted bars
 (menu-bar-mode -1)
