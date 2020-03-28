@@ -7,6 +7,9 @@ set -gx LESS_TERMCAP_se \e'[0m'           # leave standout mode
 set -gx LESS_TERMCAP_ue \e'[0m'           # leave underline mode
 set -gx LESS_TERMCAP_us \e'[04;38;5;200m' # enter underline mode
 
+# set bat as man pager
+set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
+
 # ring bell after command completion to trigger urgency
 function bell --on-event fish_postexec
          test -n "$argv"; and echo -n \a
