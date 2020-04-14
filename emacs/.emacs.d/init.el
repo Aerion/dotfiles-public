@@ -156,9 +156,7 @@ There are two things you can do about this warning:
 (use-package company-quickhelp
   :requires company
   :config
-  (company-quickhelp-mode)
-  :hook
-  (lsp-mode . company-quickhelp-mode))
+  (company-quickhelp-mode))
 
 ;;; flycheck, linter
 (use-package flycheck
@@ -177,7 +175,7 @@ There are two things you can do about this warning:
 ;; lsp
 (use-package lsp-mode
   :commands lsp
-  :hook (python-mode . lsp))
+  )
 
 (use-package lsp-ui
   :requires lsp-mode
@@ -187,20 +185,6 @@ There are two things you can do about this warning:
   :requires lsp-mode
   :commands company-lsp)
 
-;; python
-
-(use-package pyvenv)
-;; pip install "ptvsd>=4.2"
-(use-package dap-mode)
-(require 'dap-python)
-
-;; c#
-(use-package omnisharp
-  :requires (company flycheck)
-  :hook
-  (csharp-mode . omnisharp-mode)
-  :config
-  (add-to-list 'company-backends 'company-omnisharp))
 
 ;; php
 (use-package php-mode)
