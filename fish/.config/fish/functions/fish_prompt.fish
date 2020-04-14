@@ -4,6 +4,9 @@ function fish_prompt
     set -l symbol "τ "
     set -l code $status
 
+    if set -q fish_private_mode
+        printf "🕵  "
+    end
 
     if test "$theme_complete_path" = "yes"
         set cwd (prompt_pwd)
