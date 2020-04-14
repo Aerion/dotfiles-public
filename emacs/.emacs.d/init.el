@@ -12,7 +12,7 @@
  '(nlinum-highlight-current-line t)
  '(package-selected-packages
    (quote
-    (web-mode webmode php-mode dap-mode dap-python pyvenv pyenv ace-jump-mode pandoc-mode company-quickhelp omnisharp flycheck-inline flycheck-color-mode-line flycheck company ssh-agency nlinum helm-swoop helm magit git-timemachine golden-ratio crux smart-mode-line highlight-numbers dracula-theme darcula-theme visual-regexp-steroids visual-regexp expand-region use-package))))
+    (fish-mode web-mode webmode php-mode dap-mode dap-python pyvenv pyenv ace-jump-mode pandoc-mode company-quickhelp omnisharp flycheck-inline flycheck-color-mode-line flycheck company ssh-agency nlinum helm-swoop helm magit git-timemachine golden-ratio crux smart-mode-line highlight-numbers dracula-theme darcula-theme visual-regexp-steroids visual-regexp expand-region use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -185,6 +185,8 @@ There are two things you can do about this warning:
   :requires lsp-mode
   :commands company-lsp)
 
+;; fish
+(use-package fish-mode)
 
 ;; php
 (use-package php-mode)
