@@ -1,0 +1,8 @@
+[user]
+	email = perso@aerion.me
+	name = Guillaume Taquet Gasperini
+[pull]
+	rebase = true
+[core]
+	autocrlf = input
+	pager = diff-so-fancy | less --tabs=4 -RFX
