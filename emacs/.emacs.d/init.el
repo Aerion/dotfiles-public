@@ -298,6 +298,9 @@ There are two things you can do about this warning:
 (if (not window-system)
     (add-hook 'post-command-hook 'xterm-title-update))
 
+;; remove lag in alacritty on opening https://github.com/alacritty/alacritty/issues/3091
+(setq xterm-extra-capabilities nil)
+
 ;; smooth scrolling
 (setq redisplay-dont-pause t
       scroll-margin 1
