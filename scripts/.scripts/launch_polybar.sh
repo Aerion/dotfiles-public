@@ -3,7 +3,7 @@
 pkill polybar
 
 if type "xrandr"; then
-    for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    for m in $(xrandr --listactivemonitors | tail -n +2 | grep -oE '\S+$'); do
         MONITOR=$m polybar --reload mybar &
     done
 else
