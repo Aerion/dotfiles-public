@@ -254,5 +254,4 @@ exec firefox
 exec ~/.scripts/wait_for_internet.sh && rambox
 exec thunderbird
 exec keepassxc
-exec --no-startup-id emacs --daemon
 exec dex -ae i3
