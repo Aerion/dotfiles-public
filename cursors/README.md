@@ -1,0 +1,3 @@
+## Dependencies
+
+* posy-cursors
