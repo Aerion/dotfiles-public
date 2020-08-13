@@ -5,4 +5,7 @@
 	rebase = true
 [core]
 	autocrlf = input
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = delta
+
+[interactive]
+	diffFilter = delta --color-only

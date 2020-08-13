@@ -1,0 +1,3 @@
+## Dependencies
+
+* git-delta-bin
