@@ -188,7 +188,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Shift+X exec ~/.scripts/lock.sh
 
 # Screenshot
-bindsym Print exec maim -s --format=png | xclip -selection clipboard -t image/png && notify-send "Screenshot" "Taken and copied to clipboard"
+bindsym Print exec gscreenshot-cli -c -s && notify-send "Screenshot" "Taken and copied to clipboard"
 
 bindsym $mod+x [urgent=latest] focus
 
