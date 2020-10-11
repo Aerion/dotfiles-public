@@ -21,13 +21,10 @@ progress0 = ${colors.foreground-alt}
 progress1 = ${xrdb:color3}
 progress2 = ${xrdb:color9}
 
-[bar/mybar]
-monitor = ${env:MONITOR:}
+[bar/base]
 width = 100%
 height = 27
 fixed-center = false
-
-enable-ipc = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -44,6 +41,8 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
+modules-left = popup-calendar i3
+
 font-0 = "Siji:pixelsize=10;0"
 font-1 = "Fira Code:pixelsize=10"
 font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=10;0"
@@ -52,24 +51,45 @@ font-4 = "Font Awesome 5 Brands:style=Regular:pixelsize=10;0"
 ;font-3 = fixed:pixelsize=10;0
 ;font-4 = Unifont Upper:fontformat=truetype:size=8:antialias=false;0
 
-modules-left = popup-calendar i3
-modules-center = xwindow player-mpris-tail
-modules-right = updates-arch-combined-timer updates-arch-combined volume load-average mem2 cpu2 eth
-
-tray-position = right
-tray-padding = 0
-;tray-transparent = true
-;tray-background = #0063ff
-
-;wm-restack = i3
-
-;override-redirect = true
-
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
 cursor-click = pointer
-;cursor-scroll = ns-resize
+
+[bar/main]
+inherit = bar/base
+enable-ipc = true
+
+tray-position = right
+tray-padding = 0
+
+monitor = ${env:MONITOR:}
+monitor-strict = true
+
+xwindow-max-length = 999
+
+modules-center = xwindow
+modules-right = updates-arch-combined-timer updates-arch-combined volume load-average mem2 cpu2 eth
+
+[bar/other]
+inherit = bar/base
+
+monitor = ${env:MONITOR:}
+monitor-strict = true
+
+mpris-exec = ~/.config/polybar/scripts/player-mpris-tail.py -f '{icon} {artist} - {title}'  --icon-playing '' --icon-paused ''
+
+modules-center = player-mpris-tail
+modules-right = volume load-average mem2 cpu2 eth
+
+[bar/single]
+inherit = bar/main
+
+xwindow-max-length = 50
+mpris-max-length = ~/.config/polybar/scripts/player-mpris-tail.py -f '{icon} {:t40:{title}:}' --icon-playing '' --icon-paused ''
+
+modules-center = xwindow player-mpris-tail
+modules-right = volume load-average mem2 cpu2 eth
 
 [module/wg]
 type = internal/network
@@ -78,7 +98,7 @@ interval = 3.0
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:50:...%
+label = %title:0:${root.xwindow-max-length}:...%
 
 [module/filesystem]
 type = internal/fs
@@ -405,11 +425,11 @@ format-prefix = ""
 
 [module/player-mpris-tail]
 type = custom/script
-exec = ~/.config/polybar/scripts/player-mpris-tail.py -f ' {:t40:{title}:}'
+exec = ${root.mpris-exec}
 tail = true
-click-left = ~/polybar-scripts/player-mpris-tail.py previous &
-click-right = ~/polybar-scripts/player-mpris-tail.py next &
-click-middle = ~/polybar-scripts/player-mpris-tail.py play-pause &
+click-left = ~/.config/polybar/scripts/player-mpris-tail.py play-pause &
+click-right = ~/.config/polybar/scripts/player-mpris-tail.py next &
+click-middle = ~/.config/polybar/scripts/player-mpris-tail.py previous &
 
 [module/popup-calendar]
 type = custom/script
