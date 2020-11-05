@@ -77,7 +77,7 @@ inherit = bar/base
 monitor = ${env:MONITOR:}
 monitor-strict = true
 
-mpris-exec = ~/.config/polybar/scripts/player-mpris-tail.py -f '{icon} {artist} - {title}'  --icon-playing '' --icon-paused '' --icon-stopped ''
+mpris-exec = ~/.config/polybar/scripts/player-mpris-tail.py -f '{icon} {title} - {artist}'  --icon-playing '' --icon-paused '' --icon-stopped ''
 
 modules-center = player-mpris-tail
 modules-right = volume load-average mem2 cpu2 eth
