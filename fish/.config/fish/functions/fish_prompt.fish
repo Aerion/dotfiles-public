@@ -1,4 +1,4 @@
-# ~/dotfiles τ cd -                                                *master +21
+# ~/dotfiles τ cd -                                                [1] master
 
 function fish_prompt
     set -l red "d75f5f"
