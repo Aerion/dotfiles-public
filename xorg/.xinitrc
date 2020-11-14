@@ -14,4 +14,7 @@ dbus-update-activation-environment --systemd DISPLAY
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
+# Set QT style to be the same as Gtk
+export QT_STYLE_OVERRIDE=gtk2
+
 exec i3 --shmlog-size=26214400
