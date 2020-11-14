@@ -18,3 +18,48 @@ Function GitCheckout { git checkout }
 Set-Alias -Name gck -Value GitCheckout
 Function GitDiff { git diff }
 Set-Alias -Name gd -Value GitDiff
+
+# /abc/def/ghi/folder/again => /a/d/g/f/again
+# /abc => /abc
+function prompt_get_cwd {
+    $cwd = (Get-Location).Path
+    $sep = [IO.Path]::DirectorySeparatorChar.ToString()
+    $params = "$cwd" -split $sep
+
+    if ($params.length -lt 3) {
+        return $cwd
+    }
+
+    $paramsInitials = $params[0..($params.length - 2)] | % { [string]$_[0] }
+    $res = Join-String -Separator $sep -InputObject $paramsInitials
+    $res += "${sep}" + ${params}[-1]
+
+    return $res
+}
+
+function prompt {
+    $red = "DarkRed"
+    $cyan = "DarkCyan"
+    $symbol = "τ"
+    $code = $LASTEXITCODE
+
+    # Set bold (`e[21m to unset)
+    Write-Host "`e[1m" -NoNewLine -ForegroundColor $cyan
+
+    $cwd = prompt_get_cwd
+    Write-Host "$cwd " -NoNewLine -ForegroundColor $cyan
+
+    if ($code ?? 0 -ne 0) {
+        Write-Host "($code) $symbol`e[21m" -NoNewLine -ForegroundColor $red
+    } else {
+        Write-Host "`e[21m$symbol" -NoNewLine
+    }
+
+    # TODO: make it appear at the end of the line
+    $branch = git branch --show-current 2> /dev/null
+    if ($LASTEXITCODE -eq 0) {
+        Write-Host " ($branch)" -NoNewLine
+    }
+
+    return " "
+}
