@@ -57,10 +57,10 @@ bindsym Control_R+Return exec $term_name
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec rofi -theme android_notification.rasi -show run
+bindsym $mod+d exec rofi -show run
 
 # List windows and jump to one of them
-bindsym $mod+Tab exec rofi -show window -modi window -theme android_notification.rasi
+bindsym $mod+Tab exec rofi -show window -modi window
 
 # start splatmoji https://github.com/cspeterson/splatmoji
 bindcode $mod+59 exec "splatmoji type"
