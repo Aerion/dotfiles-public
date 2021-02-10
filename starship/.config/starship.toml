@@ -1,0 +1,25 @@
+add_newline = false
+format = """${custom.fish_private}${all}"""
+
+[character]
+success_symbol = "[τ](bold green)"
+error_symbol = "[τ](bold red)"
+
+[status]
+disabled = false
+
+[shlvl]
+disabled = false
+symbol = "↕️ "
+threshold = 3
+
+[git_status]
+deleted = "✝"
+format = '([$all_status$ahead_behind]($style) )'
+
+# https://github.com/starship/starship/issues/2144
+[custom.fish_private]
+when = 'test -n "$FISH_PRIVATE_MODE"'
+description = "Indicates that fish shell is in private mode"
+symbol = "🙈 "
+style = "purple"
