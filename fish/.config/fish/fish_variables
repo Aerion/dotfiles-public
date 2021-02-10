@@ -49,11 +49,11 @@ SETUVAR _fish_abbr_magit:emacsclient\x20\x2dc\x20\x2dt\x20\x2d\x2deval\x20\x27\x
 SETUVAR _fish_abbr_mv:mv\x20\x2div
 SETUVAR _fish_abbr_rm:timeout\x203\x20rm\x20\x2dIv\x20\x2d\x2done\x2dfile\x2dsystem
 SETUVAR _fish_abbr_streamlink:streamlink\x20\x2d\x2dplayer\x20mpv
-SETUVAR _fish_abbr_tR:yay\x20\x2dR
-SETUVAR _fish_abbr_tS:yay\x20\x2dS
+SETUVAR _fish_abbr_tR:paru\x20\x2dR
+SETUVAR _fish_abbr_tS:paru\x20\x2dS
 SETUVAR _fish_abbr_temp:cd\x20\x28mktemp\x20\x2dd\x29
 SETUVAR _fish_abbr_tree:exa\x20\x2dTl
-SETUVAR _fish_abbr_tsyu:yay\x20\x2dSyu
+SETUVAR _fish_abbr_tsyu:paru\x20\x2dSyu
 SETUVAR _fish_abbr_wgetd:wget\x20\x2dr\x20\x2dnH\x20\x2d\x2dcut\x2ddirs\x3d2\x20\x2dnp\x20\x2d\x2dreject\x3d\x22index\x2ehtml\x2a\x22\x20\x2dq\x20\x2d\x2dshow\x2dprogress\x20\x2de\x20robots\x3doff
 SETUVAR _fish_abbr_xib:xsel\x20\x2di\x20\x2db
 SETUVAR _fish_abbr_xob:xsel\x20\x2do\x20\x2db
