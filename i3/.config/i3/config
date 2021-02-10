@@ -235,6 +235,7 @@ assign [class="^[cC]hromium$"] $ws2
 assign [class="^[fF]irefox$"] $ws2
 assign [class="^Skype$"] $ws3
 assign [class="^Rambox*"] $ws3
+assign [class="^[sS]ignal*"] $ws3
 assign [class="^Thunderbird$"] $ws4
 assign [class="^mpv$"] $ws0
 assign [class="^MellowPlayer.?$"] $ws5
@@ -245,13 +246,20 @@ assign [class="^looking-glass-client$"] $ws0
 
 workspace $ws0 output DVI-D-2
 
+exec --no-startup-id "i3-msg 'workspace 1:; append_layout ~/.i3/ws1.json'"
+exec --no-startup-id "i3-msg 'workspace 2:; append_layout ~/.i3/ws2.json'"
+exec --no-startup-id "i3-msg 'workspace 3:; append_layout ~/.i3/ws3.json'"
+exec --no-startup-id "i3-msg 'workspace 4:; append_layout ~/.i3/ws4.json'"
+exec --no-startup-id "i3-msg 'workspace 7:; append_layout ~/.i3/ws7.json'"
+
 # Startup applications
 exec_always --no-startup-id ~/.scripts/launch_polybar.sh
 exec --no-startup-id sleep 10 && redshift-qt
 exec --no-startup-id dunst
 exec --no-startup-id picom seq 0 3 | xargs -l1 -I@ --backend glx -f -c -b -d :0.@
 exec firefox
-exec ~/.scripts/wait_for_internet.sh && rambox
+exec ferdi
+exec signal-desktop --use-tray-icon
 exec thunderbird
 exec keepassxc
 exec dex -ae i3

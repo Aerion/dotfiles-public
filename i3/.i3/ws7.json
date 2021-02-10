@@ -1,0 +1,15 @@
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "marks": [],
+    "name": "Passwords.kdbx - KeePassXC",
+    "percent": 1,
+    "swallows": [
+       {
+        "class": "^KeePassXC$"
+       }
+    ],
+    "type": "con"
+}
+
