@@ -69,7 +69,7 @@ monitor-strict = true
 xwindow-max-length = 999
 
 modules-center = xwindow
-modules-right = updates-arch-combined-timer updates-arch-combined volume load-average mem2 cpu2 eth
+modules-right = volume load-average mem2 cpu2 eth
 
 [bar/other]
 inherit = bar/base
@@ -392,25 +392,6 @@ menu-2-0 = power off
 menu-2-0-exec = shutdown now
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
-
-[module/updates-arch-combined]
-type = custom/ipc
-
-hook-0 = ~/.config/polybar/scripts/updates-arch-combined.sh
-hook-1 = echo ""
-
-format = <output>
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-click-left = ~/.config/polybar/scripts/updates-arch-combined-refresh.sh
-click-right = alacritty -e bash -c 'yay -Syu; fish'
-
-initial = 2
-
-[module/updates-arch-combined-timer]
-type = custom/script
-interval = 600
-exec = ~/.config/polybar/scripts/updates-arch-combined-refresh.sh 2> /dev/null
 
 [module/load-average]
 type = custom/script
