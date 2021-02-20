@@ -3,6 +3,7 @@
 SETUVAR --export DOTNET_CLI_TELEMETRY_OPTOUT:1
 SETUVAR --export EDITOR:emacsclient\x1e\x2dt
 SETUVAR FZF_DEFAULT_OPTS:\x2d\x2dheight\x2040\x25
+SETUVAR FZF_DISABLE_KEYBINDINGS:0
 SETUVAR FZF_LEGACY_KEYBINDINGS:1
 SETUVAR FZF_PREVIEW_DIR_CMD:ls
 SETUVAR FZF_PREVIEW_FILE_CMD:head\x20\x2dn\x2010
@@ -10,11 +11,7 @@ SETUVAR FZF_TMUX_HEIGHT:40\x25
 SETUVAR --export GOPATH:/home/guillaume/go
 SETUVAR --export SHELL:/usr/bin/fish
 SETUVAR --export SSH_AUTH_SOCK:/run/user/1000/ssh\x2dagent\x2esocket
-SETUVAR ZO_CMD:zo
-SETUVAR Z_CMD:z
-SETUVAR Z_DATA:/home/guillaume/\x2elocal/share/z/data
 SETUVAR Z_DATA_DIR:/home/guillaume/\x2elocal/share/z
-SETUVAR Z_EXCLUDE:/home/guillaume
 SETUVAR __fish_classic_git_prompt_initialized:\x1d
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
@@ -58,6 +55,9 @@ SETUVAR _fish_abbr_wgetd:wget\x20\x2dr\x20\x2dnH\x20\x2d\x2dcut\x2ddirs\x3d2\x20
 SETUVAR _fish_abbr_xib:xsel\x20\x2di\x20\x2db
 SETUVAR _fish_abbr_xob:xsel\x20\x2do\x20\x2db
 SETUVAR _fish_abbr_ydl:youtube\x2ddl\x20\x2d\x2drestrict\x2dfilenames
+SETUVAR _fisher_jethrokuan_2F_fzf_files:/home/guillaume/\x2econfig/fish/functions/__fzf_cd\x2efish\x1e/home/guillaume/\x2econfig/fish/functions/__fzf_complete\x2efish\x1e/home/guillaume/\x2econfig/fish/functions/__fzf_complete_preview\x2efish\x1e/home/guillaume/\x2econfig/fish/functions/__fzf_find_file\x2efish\x1e/home/guillaume/\x2econfig/fish/functions/__fzf_get_dir\x2efish\x1e/home/guillaume/\x2econfig/fish/functions/__fzf_open\x2efish\x1e/home/guillaume/\x2econfig/fish/functions/__fzf_parse_commandline\x2efish\x1e/home/guillaume/\x2econfig/fish/functions/__fzf_reverse_isearch\x2efish\x1e/home/guillaume/\x2econfig/fish/functions/__fzfcmd\x2efish\x1e/home/guillaume/\x2econfig/fish/conf\x2ed/fzf\x2efish
+SETUVAR _fisher_jorgebucaran_2F_fisher_files:/home/guillaume/\x2econfig/fish/functions/fisher\x2efish\x1e/home/guillaume/\x2econfig/fish/completions/fisher\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ejethrokuan/fzf
 SETUVAR fish_color_autosuggestion:969896
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:84cb45
