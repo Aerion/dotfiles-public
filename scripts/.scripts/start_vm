@@ -23,7 +23,7 @@ pkill redshift
 
 sudo virsh start win10
 
-looking-glass-client -F &
+looking-glass-client -F -T &
 if ! pgrep scream-ivshmem; then
     scream-ivshmem-pulse /dev/shm/scream-ivshmem &
 fi
