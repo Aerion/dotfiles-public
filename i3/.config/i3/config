@@ -64,6 +64,8 @@ bindsym $mod+Tab exec rofi -show window -modi window
 
 # start splatmoji https://github.com/cspeterson/splatmoji
 bindcode $mod+59 exec "splatmoji type"
+# start splatmoji for gitmojis
+bindcode $mod+Shift+59 exec "splatmoji -j -m type ~/.local/share/splatmoji/data/gitmojis.tsv"
 
 # Keepmenu
 bindsym $mod+slash exec keepmenu
