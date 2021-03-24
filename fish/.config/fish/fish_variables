@@ -42,6 +42,7 @@ SETUVAR _fish_abbr_glod:git\x20log\x20\x2d\x2doneline\x20decorate
 SETUVAR _fish_abbr_gpl:git\x20pull
 SETUVAR _fish_abbr_gps:git\x20push
 SETUVAR _fish_abbr_gs:git\x20status\x20\x2d\x2dshort\x20\x2d\x2dbranch
+SETUVAR _fish_abbr_gsw:git\x20switch
 SETUVAR _fish_abbr_l:exa\x20\x2d\x2dgroup\x2ddirectories\x2dfirst
 SETUVAR _fish_abbr_la:exa\x20\x2da
 SETUVAR _fish_abbr_ll:exa\x20\x2dlh\x20\x2d\x2dgroup\x2ddirectories\x2dfirst

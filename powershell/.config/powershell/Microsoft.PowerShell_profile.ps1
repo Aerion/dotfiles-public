@@ -18,6 +18,8 @@ Function GitLog { git log --abbrev-commit $args }
 Set-Alias -Name gl -Value GitLog -Force
 Function GitCheckout { git checkout $args }
 Set-Alias -Name gck -Value GitCheckout
+Function GitSwitch { git switch $args }
+Set-Alias -Name gsw -Value GitSwitch
 Function GitDiff { git diff $args }
 Set-Alias -Name gd -Value GitDiff
 
