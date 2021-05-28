@@ -1,10 +1,8 @@
 # Polybar scripts
 
-Some scripts are used from another repo.
-For now, the (ugly) method is to clone the repo in a specific folder, and
-running `stow polybar` afterwards.
+Some scripts are stored in a submodule, run the following command to fetch it.
 
-`git clone git@github.com:Aerion/polybar-scripts.git .config/polybar/scripts/polybar-scripts/`
+`git submodule update --init`
 
 ## Dependencies
 
