@@ -231,17 +231,19 @@ format-prefix = " "
 
 label = %output%
 
-[module/wlan]
+[module/net-base]
 type = internal/network
-interface = wlp1s0
 interval = 3.0
 
-format-connected = <ramp-signal><label-connected>
-
-label-connected = %upspeed:8% ⇵ %downspeed:8%
-label-connected-foreground = ${colors.foreground-alt}
-
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected =  %upspeed:8%  %downspeed:8%
 format-disconnected =
+
+[module/wlan]
+inherit = module/net-base
+interface-type = wireless
+
+format-connected = <ramp-signal><label-connected>
 
 ramp-signal-0 = 
 ramp-signal-1 = 
@@ -251,21 +253,11 @@ ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground}
 
 [module/eth]
-type = internal/network
-interface = enp6s0
-interval = 3.0
+inherit = module/net-base
+; use polybar-git until https://github.com/polybar/polybar/pull/2025 is merged
+interface-type = wired
 
-;format-connected-underline = #55aa55
 format-connected-prefix = "%{O5}"
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected =  %upspeed:8%  %downspeed:8%
-;label-connected = %local_ip%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
