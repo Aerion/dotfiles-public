@@ -66,7 +66,7 @@ monitor-strict = true
 xwindow-max-length = 999
 
 modules-center = xwindow
-modules-right = volume load-average mem2 cpu2 eth
+modules-right = pulseaudio-microphone volume load-average mem2 cpu2 eth
 
 [bar/other]
 inherit = bar/base
@@ -77,7 +77,7 @@ monitor-strict = true
 mpris-exec = ~/.config/polybar/scripts/player-mpris-tail.py -f '{icon} {title} - {artist}'  --icon-playing '' --icon-paused '' --icon-stopped ''
 
 modules-center = player-mpris-tail
-modules-right = volume load-average mem2 cpu2 eth
+modules-right = pulseaudio-microphone volume load-average mem2 cpu2 eth
 
 [bar/single]
 inherit = bar/main
@@ -408,6 +408,14 @@ tail = true
 click-left = ~/.config/polybar/scripts/player-mpris-tail.py play-pause &
 click-right = ~/.config/polybar/scripts/player-mpris-tail.py next &
 click-middle = ~/.config/polybar/scripts/player-mpris-tail.py previous &
+
+[module/pulseaudio-microphone]
+type = custom/script
+exec = ~/.config/polybar/scripts/polybar-scripts/polybar-scripts/pulseaudio-microphone/pulseaudio-microphone.sh
+tail = true
+click-left = ~/.config/polybar/scripts/polybar-scripts/polybar-scripts/pulseaudio-microphone/pulseaudio-microphone.sh --toggle &
+scroll-up = ~/.config/polybar/scripts/polybar-scripts/polybar-scripts/pulseaudio-microphone/pulseaudio-microphone.sh --increase &
+scroll-down = ~/.config/polybar/scripts/polybar-scripts/polybar-scripts/pulseaudio-microphone/pulseaudio-microphone.sh --decrease &
 
 [module/popup-calendar]
 type = custom/script
