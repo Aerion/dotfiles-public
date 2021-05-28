@@ -56,6 +56,11 @@ cursor-click = pointer
 monitor = ${env:MONITOR:}
 monitor-strict = true
 
+; The separator will be inserted between the output of each module
+; This has the same properties as a label
+separator = |
+separator-foreground = ${colors.secondary}
+
 [bar/main]
 inherit = bar/base
 enable-ipc = true
