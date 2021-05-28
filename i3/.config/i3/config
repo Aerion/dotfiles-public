@@ -257,6 +257,7 @@ exec --no-startup-id "i3-msg 'workspace 7:; append_layout ~/.i3/ws7.json'"
 # Startup applications
 exec_always --no-startup-id ~/.scripts/launch_polybar.sh
 exec --no-startup-id sleep 10 && redshift-qt
+exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 exec --no-startup-id env DISPLAY=:0 picom -b
 exec --no-startup-id env DISPLAY=:1 picom -b
