@@ -49,7 +49,7 @@ set $right m
 floating_modifier $mod
 
 # start a terminal
-set $term_name alacritty
+set $term_name kitty
 bindsym $mod+Return exec $term_name
 bindsym Control_R+Return exec $term_name
 
