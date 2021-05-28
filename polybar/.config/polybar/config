@@ -53,15 +53,15 @@ scroll-down = i3wm-wsnext
 
 cursor-click = pointer
 
+monitor = ${env:MONITOR:}
+monitor-strict = true
+
 [bar/main]
 inherit = bar/base
 enable-ipc = true
 
 tray-position = right
 tray-padding = 0
-
-monitor = ${env:MONITOR:}
-monitor-strict = true
 
 xwindow-max-length = 999
 
@@ -70,9 +70,6 @@ modules-right = pulseaudio-microphone volume load-average mem2 cpu2 eth
 
 [bar/other]
 inherit = bar/base
-
-monitor = ${env:MONITOR:}
-monitor-strict = true
 
 mpris-exec = ~/.config/polybar/scripts/player-mpris-tail.py -f '{icon} {title} - {artist}'  --icon-playing '' --icon-paused '' --icon-stopped ''
 
