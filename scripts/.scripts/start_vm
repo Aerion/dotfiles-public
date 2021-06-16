@@ -21,6 +21,6 @@ done
 
 pkill -USR1 redshift
 
-sudo virsh start win10
+virsh --connect qemu:///system start win10
 
 looking-glass-client &
