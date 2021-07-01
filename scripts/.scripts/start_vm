@@ -2,9 +2,9 @@
 
 sudo echo -n ""
 
-# Move every workspace except the one named DO_NOT_MOVE_WS_NAME from
+# Move every workspace except the one named LG_WS_NAME (holding looking glass) from
 # the left monitor to the right monitor
-DO_NOT_MOVE_WS_NAME="10:"
+LG_WS_NAME="10:"
 
 outputs=$(i3-msg -t get_outputs | jq -r '.[] | select(.active)')
 left_output=$(echo "$outputs" \
@@ -13,7 +13,7 @@ right_output=$(echo "$outputs" \
                   | jq -r 'select(.rect.x != 0) | .name')
 
 to_move=$(i3-msg -t get_workspaces \
-              | jq -r ".[] | select(.output == \"$right_output\" and .name != \"$DO_NOT_MOVE_WS_NAME\") | .name")
+              | jq -r ".[] | select(.output == \"$right_output\" and .name != \"$LG_WS_NAME\") | .name")
 for w in $to_move; do
     echo "workspace $w, move workspace to output $left_output"
     i3-msg "workspace $w, move workspace to output $left_output"
@@ -24,3 +24,4 @@ pkill -USR1 redshift
 virsh --connect qemu:///system start win10
 
 looking-glass-client &
+i3-msg "workspace $LG_WS_NAME, move workspace to output $right_output"
