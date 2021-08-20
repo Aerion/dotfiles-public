@@ -1,27 +1,23 @@
 #!/bin/sh
 
-sudo echo -n ""
-
 # Move every workspace except the one named LG_WS_NAME (holding looking glass) from
 # the left monitor to the right monitor
-LG_WS_NAME="10:"
+LG_WS_NUMBER="10"
 
-outputs=$(i3-msg -t get_outputs | jq -r '.[] | select(.active)')
+outputs=$(swaymsg -t get_outputs | jq -r '.[] | select(.active)')
 left_output=$(echo "$outputs" \
                   | jq -r 'select(.rect.x == 0) | .name')
 right_output=$(echo "$outputs" \
                   | jq -r 'select(.rect.x != 0) | .name')
 
-to_move=$(i3-msg -t get_workspaces \
-              | jq -r ".[] | select(.output == \"$right_output\" and .name != \"$LG_WS_NAME\") | .name")
+to_move=$(swaymsg -t get_workspaces \
+              | jq -r ".[] | select(.output == \"$right_output\" and .num != \"$LG_WS_NUMBER\") | .num")
 for w in $to_move; do
-    echo "workspace $w, move workspace to output $left_output"
-    i3-msg "workspace $w, move workspace to output $left_output"
+    echo "workspace number $w, move workspace to output $left_output"
+    swaymsg "workspace number $w, move workspace to output $left_output"
 done
-
-pkill -USR1 redshift
 
 virsh --connect qemu:///system start win10
 
 looking-glass-client &
-i3-msg "workspace $LG_WS_NAME, move workspace to output $right_output"
+swaymsg "workspace number $LG_WS_NUMBER, move workspace to output $right_output"
