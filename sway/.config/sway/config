@@ -200,6 +200,7 @@ for_window [app_id="floating-terminal"] floating enable, resize set 800 450
 assign [class="^[cC]hromium$"] workspace number 2
 assign [app_id="firefox"] workspace number 2
 assign [class="^[sS]ignal*"] workspace number 3
+assign [class="^[fF]erdi*"] workspace number 3
 assign [class="^[sS]lack*"] workspace number 3
 assign [app_id="thunderbird"] workspace number 4
 assign [app_id="mpv"] workspace number 10
