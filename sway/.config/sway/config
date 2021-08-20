@@ -5,6 +5,8 @@ input * {
     repeat_rate 30
 }
 
+font pango:monospace 8
+
 # use Windows key for $mod
 set $mod Mod4
 
