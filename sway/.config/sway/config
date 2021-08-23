@@ -31,6 +31,10 @@ bindsym $mod+Shift+q kill
 # start app launcher
 bindsym $mod+d exec bemenu-run -l 20
 
+# start splatmoji https://github.com/cspeterson/splatmoji
+bindcode $mod+59 exec "splatmoji type"
+# start splatmoji for gitmojis
+bindcode $mod+Shift+59 exec "splatmoji -j -m type ~/.local/share/splatmoji/data/gitmojis.tsv"
 
 # change focus
 bindsym $mod+$left focus left
