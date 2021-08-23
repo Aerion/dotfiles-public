@@ -28,8 +28,9 @@ bindsym $mod+Shift+Return exec $term_name --class=floating-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start ulauncher (app launcher)
-bindsym $mod+d exec ulauncher
+# start app launcher
+bindsym $mod+d exec bemenu-run -l 20
+
 
 # change focus
 bindsym $mod+$left focus left
@@ -220,7 +221,8 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 exec sworkstyle
 exec nm-applet --indicator
 exec dunst
-exec GDK_BACKEND=wayland ulauncher --hide-window
+exec slack
+exec davmail ~/.config/davmail/guillaume.properties
 exec firefox
 exec thunderbird
 exec keepassxc
