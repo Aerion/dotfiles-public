@@ -39,7 +39,7 @@ bindsym $mod+Shift+Return exec $term_name --class=floating-terminal
 bindsym $mod+Shift+q kill
 
 # start app launcher
-bindsym $mod+d exec bemenu-run -l 20
+bindsym $mod+d exec bemenu-run -l 20 -i
 
 # start splatmoji https://github.com/cspeterson/splatmoji
 bindcode $mod+59 exec "splatmoji type"
