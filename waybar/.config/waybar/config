@@ -9,6 +9,7 @@
     ],
     "modules-right": [
         "idle_inhibitor",
+        "backlight",
         "pulseaudio",
         "memory",
         "cpu",
@@ -43,6 +44,13 @@
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "backlight": {    
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", ""],
+        "on-scroll-up": "light -A 5",
+        "on-scroll-down": "light -U 5"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
