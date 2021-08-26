@@ -18,7 +18,7 @@ end
 # Start X at login on tty1
 if status --is-login
     if test -z "$DISPLAY" -a $XDG_VTNR = 1
-        exec sway
+        exec startx -- -keeptty
     end
 end
 
