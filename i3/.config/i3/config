@@ -51,7 +51,7 @@ floating_modifier $mod
 # start a terminal
 set $term_name kitty
 bindsym $mod+Return exec $term_name
-bindsym Control_R+Return exec $term_name
+bindsym $mod+Shift+Return exec $term_name --class=floating-terminal
 
 # start kitti3 (kitty as a dropdown terminal): https://github.com/LandingEllipse/kitti3
 bindsym $mod+n nop kitti3
@@ -234,6 +234,7 @@ new_window pixel 1
 
 # Change tiling for specific applications
 for_window [class="Yad" title="yad-calendar"] floating enable
+for_window [class="floating-terminal"] floating enable, resize set 800 450, move position center
 
 # Specific workspaces
 assign [class="^[cC]hromium$"] $ws2
