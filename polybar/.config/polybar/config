@@ -88,7 +88,7 @@ xwindow-max-length = 50
 mpris-max-length = ~/.config/polybar/scripts/player-mpris-tail.py -f '{icon} {:t40:{title}:}' --icon-playing '' --icon-paused '' --icon-stopped ''
 
 modules-center = xwindow player-mpris-tail
-modules-right = volume load-average mem2 cpu2 eth
+modules-right = pulseaudio-microphone volume load-average mem2 cpu2 wlan battery
 
 [module/wg]
 type = internal/network
@@ -248,14 +248,7 @@ format-disconnected =
 inherit = module/net-base
 interface-type = wireless
 
-format-connected = <ramp-signal><label-connected>
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground}
+format-connected = <label-connected>
 
 [module/eth]
 inherit = module/net-base
@@ -291,9 +284,10 @@ format-volume = <ramp-volume> <label-volume>
 label-volume = "%percentage%%"
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = 0%
+; format-muted-prefix =
+format-muted-foreground = ${colors.background}
+format-muted-background = ${colors.foreground-alt}
+label-muted = "  "
 
 ; Only applies if <ramp-volume> is used
 ramp-volume-0 = 
@@ -313,26 +307,28 @@ type = internal/battery
 battery = BAT0
 adapter = AC
 full-at = 98
+time-format = %H:%M
 
 format-charging = <animation-charging> <label-charging>
 ;format-charging-underline = #ffb52a
 
 format-discharging = <ramp-capacity> <label-discharging>
-;format-discharging-underline = ${self.format-charging-underline}
+label-discharging = %percentage%% %time%
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-foreground = ${colors.foreground-alt}
 ;format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
 ramp-capacity-foreground = ${colors.foreground}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
@@ -386,7 +382,7 @@ menu-2-1-exec = menu-open-0
 
 [module/load-average]
 type = custom/script
-exec = uptime | grep -Po '(?<=,\s)(\d+\.\d+)(?=,)'
+exec = uptime | grep -Po '(?<=,\\s)(\\d+\\.\\d+)(?=,)'
 interval = 1
 
 label = " %output%"
