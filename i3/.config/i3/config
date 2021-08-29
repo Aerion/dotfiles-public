@@ -53,9 +53,6 @@ set $term_name kitty
 bindsym $mod+Return exec $term_name
 bindsym $mod+Shift+Return exec $term_name --class=floating-terminal
 
-# start kitti3 (kitty as a dropdown terminal): https://github.com/LandingEllipse/kitti3
-bindsym $mod+n nop kitti3
-
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -260,7 +257,6 @@ exec --no-startup-id "i3-msg 'workspace 7:; append_layout ~/.i3/ws7.json'"
 
 # Startup applications
 exec_always --no-startup-id ~/.scripts/launch_polybar.sh
-exec_always --no-startup-id kitti3
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 exec --no-startup-id sleep 10 && redshift-qt
 exec --no-startup-id nm-applet
