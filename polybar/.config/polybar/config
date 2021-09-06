@@ -88,7 +88,7 @@ xwindow-max-length = 50
 mpris-max-length = ~/.config/polybar/scripts/player-mpris-tail.py -f '{icon} {:t40:{title}:}' --icon-playing '' --icon-paused '' --icon-stopped ''
 
 modules-center = xwindow player-mpris-tail
-modules-right = pulseaudio-microphone volume load-average mem2 cpu2 wlan battery
+modules-right = pulseaudio-microphone volume xbacklight load-average mem2 cpu2 wlan battery
 
 [module/wg]
 type = internal/network
@@ -189,16 +189,14 @@ label-song-maxlen = 25
 label-song-ellipsis = true
 
 [module/xbacklight]
-type = internal/xbacklight
+type = internal/backlight
 
-format = <ramp> <label>
+format =   <label>
 label = %percentage%%
 
-ramp-0 = 🌕
-ramp-1 = 🌔
-ramp-2 = 🌓
-ramp-3 = 🌒
-ramp-4 = 🌑
+card = intel_backlight
+
+enable-scroll = true
 
 [module/cpu2]
 type = internal/cpu
