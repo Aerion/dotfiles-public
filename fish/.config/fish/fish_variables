@@ -14,7 +14,7 @@ SETUVAR --export GOPATH:/home/guillaume/go
 SETUVAR --export MOZ_ENABLE_WAYLAND:1
 SETUVAR --export QT_STYLE_OVERRIDE:adwaita\x2ddark
 SETUVAR --export SHELL:/usr/bin/fish
-SETUVAR --export SSH_AUTH_SOCK:/run/user/1000/ssh\x2dagent\x2esocket
+SETUVAR --export SSH_AUTH_SOCK:/run/user/1000/keyring/ssh
 SETUVAR --export XDG_CONFIG_HOME:/home/guillaume/\x2econfig
 SETUVAR --export XDG_CURRENT_DESKTOP:sway
 SETUVAR Z_DATA_DIR:/home/guillaume/\x2elocal/share/z

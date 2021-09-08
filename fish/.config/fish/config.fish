@@ -17,6 +17,7 @@ end
 
 # Start X at login on tty1
 if status --is-login
+    set -x (gnome-keyring-daemon --start | string split "=")
     if test -z "$DISPLAY" -a $XDG_VTNR = 1
         exec sway
     end
