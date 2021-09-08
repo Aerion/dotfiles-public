@@ -71,7 +71,7 @@ tray-padding = 0
 xwindow-max-length = 999
 
 modules-center = xwindow
-modules-right = pulseaudio-microphone volume load-average mem2 cpu2 eth
+modules-right = pulseaudio-microphone volume dunst load-average mem2 cpu2 eth
 
 [bar/other]
 inherit = bar/base
@@ -79,7 +79,7 @@ inherit = bar/base
 mpris-exec = ~/.config/polybar/scripts/player-mpris-tail.py -f '{icon} {title} - {artist}'  --icon-playing '' --icon-paused '' --icon-stopped ''
 
 modules-center = player-mpris-tail
-modules-right = pulseaudio-microphone volume load-average mem2 cpu2 eth
+modules-right = pulseaudio-microphone volume dunst load-average mem2 cpu2 eth
 
 [bar/single]
 inherit = bar/main
@@ -88,7 +88,7 @@ xwindow-max-length = 50
 mpris-max-length = ~/.config/polybar/scripts/player-mpris-tail.py -f '{icon} {:t40:{title}:}' --icon-playing '' --icon-paused '' --icon-stopped ''
 
 modules-center = xwindow player-mpris-tail
-modules-right = pulseaudio-microphone volume xbacklight load-average mem2 cpu2 wlan battery
+modules-right = pulseaudio-microphone volume xbacklight dunst load-average mem2 cpu2 wlan battery
 
 [module/wg]
 type = internal/network
@@ -410,6 +410,13 @@ type = custom/script
 exec = ~/.config/polybar/scripts/polybar-scripts/polybar-scripts/popup-calendar/popup-calendar.sh "%a %d/%m %H:%M:%S"
 interval = 5
 click-left = ~/.config/polybar/scripts/polybar-scripts/polybar-scripts/popup-calendar/popup-calendar.sh --popup
+
+[module/dunst]
+type = custom/ipc
+initial = 1
+
+hook-0 = echo "%{A1:dunstctl set-paused true && polybar-msg hook dunst 2:}%{A}" &
+hook-1 = echo "%{A1:dunstctl set-paused false && polybar-msg hook dunst 1:}%{R}  %{A}" &
 
 [settings]
 screenchange-reload = true
