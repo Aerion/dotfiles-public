@@ -266,6 +266,7 @@ exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 exec --no-startup-id sleep 10 && redshift-qt
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
+exec --no-startup-id xss-lock -- ~/.scripts/lock.sh
 exec --no-startup-id env DISPLAY=:0 picom -b
 exec --no-startup-id env DISPLAY=:1 picom -b
 exec firefox
