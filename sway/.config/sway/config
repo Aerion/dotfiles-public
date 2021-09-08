@@ -232,6 +232,13 @@ assign [class="^looking-glass-client$"] workspace number 10
 
 workspace number 0 output DVI-D-2
 
+# Gnome settings
+set $gnome-schema org.gnome.desktop.interface
+exec_always {
+    gsettings set $gnome-schema icon-theme 'Arc'
+    gsettings set $gnome-schema cursor-theme 'posy-black'
+}
+
 # Clipboard support
 exec wl-paste -t text --watch clipman store
 
