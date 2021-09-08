@@ -67,6 +67,11 @@ bindcode $mod+59 exec "splatmoji type"
 # start splatmoji for gitmojis
 bindcode $mod+Shift+59 exec "splatmoji -j -m type ~/.local/share/splatmoji/data/gitmojis.tsv"
 
+# notifications control
+bindsym ctrl+space exec dunstctl close
+bindsym ctrl+Shift+space exec dunstctl close-all
+bindsym ctrl+Alt+space exec dunstctl action
+
 # Keepmenu
 bindsym $mod+slash exec keepmenu
 
