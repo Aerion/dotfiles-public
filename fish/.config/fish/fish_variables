@@ -12,6 +12,7 @@ SETUVAR FZF_PREVIEW_FILE_CMD:head\x20\x2dn\x2010
 SETUVAR FZF_TMUX_HEIGHT:40\x25
 SETUVAR --export GOPATH:/home/guillaume/go
 SETUVAR --export MOZ_ENABLE_WAYLAND:1
+SETUVAR --export QT_STYLE_OVERRIDE:adwaita\x2ddark
 SETUVAR --export SHELL:/usr/bin/fish
 SETUVAR --export SSH_AUTH_SOCK:/run/user/1000/ssh\x2dagent\x2esocket
 SETUVAR --export XDG_CONFIG_HOME:/home/guillaume/\x2econfig
