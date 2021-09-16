@@ -48,8 +48,8 @@ font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=10;0"
 font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=10;0"
 font-3 = "Font Awesome 5 Brands:style=Regular:pixelsize=10;0"
 
-scroll-up = i3wm-wsprev
-scroll-down = i3wm-wsnext
+scroll-up = "#i3.prev"
+scroll-down = "#i3.next"
 
 cursor-click = pointer
 
