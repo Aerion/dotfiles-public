@@ -68,7 +68,7 @@ enable-ipc = true
 tray-position = right
 tray-padding = 0
 
-xwindow-max-length = 999
+xwindow-max-length = 100
 
 modules-center = xwindow
 modules-right = pulseaudio-microphone volume dunst load-average mem2 cpu2 eth
@@ -97,7 +97,7 @@ interval = 3.0
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:${root.xwindow-max-length}:...%
+label-maxlen = ${root.xwindow-max-length}
 
 [module/filesystem]
 type = internal/fs
