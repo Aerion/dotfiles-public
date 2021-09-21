@@ -85,7 +85,7 @@ modules-right = pulseaudio-microphone volume dunst load-average mem2 cpu2 eth
 inherit = bar/main
 
 xwindow-max-length = 50
-mpris-max-length = ~/.config/polybar/scripts/player-mpris-tail.py -f '{icon} {:t40:{title}:}' --icon-playing '' --icon-paused '' --icon-stopped ''
+mpris-exec = ~/.config/polybar/scripts/player-mpris-tail.py -f '{icon} {:t40:{title}:}' --icon-playing '' --icon-paused '' --icon-stopped ''
 
 modules-center = xwindow player-mpris-tail
 modules-right = pulseaudio-microphone volume xbacklight dunst load-average mem2 cpu2 wlan battery
