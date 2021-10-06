@@ -273,6 +273,7 @@ exec firefox
 exec ferdi
 exec signal-desktop --use-tray-icon
 exec thunderbird
+exec birdtray
 exec keepassxc
 exec dex -ae i3
 exec flameshot
