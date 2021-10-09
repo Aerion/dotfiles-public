@@ -225,6 +225,9 @@ assign [app_id="ColinDuquesnoy.gitlab.com.MellowPlayer"] workspace number 5
 assign [app_id="org.keepassxc.KeePassXC"] workspace number 7
 assign [class="^looking-glass-client$"] workspace number 10
 
+for_window [class=".*"] inhibit_idle fullscreen
+for_window [app_id=".*"] inhibit_idle fullscreen
+
 workspace number 0 output DVI-D-2
 
 # Gnome settings
