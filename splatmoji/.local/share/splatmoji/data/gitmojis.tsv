@@ -8,7 +8,7 @@
 🚀	Deploy stuff.	rocket
 💄	Add or update the UI and style files.	lipstick
 🎉	Begin a project.	tada
-✅	Add or update tests.	white-check-mark
+✅	Add, update, or pass tests.	white-check-mark
 🔒️	Fix security issues.	lock
 🔖	Release / Version tags.	bookmark
 🚨	Fix compiler / linter warnings.	rotating-light
@@ -62,3 +62,5 @@
 🩹	Simple fix for a non-critical issue.	adhesive-bandage
 🧐	Data exploration/inspection.	monocle-face
 ⚰️	Remove dead code.	coffin
+🧪	Add a failing test.	test-tube
+👔	Add or update business logic	necktie
