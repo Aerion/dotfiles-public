@@ -1,5 +1,6 @@
 add_newline = false
-format = """${custom.fish_private}${all}"""
+format = """${custom.fish_private}${directory}${character}"""
+right_format="""${all}"""
 
 [character]
 success_symbol = "[τ](bold green)"
