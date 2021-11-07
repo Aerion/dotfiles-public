@@ -24,5 +24,3 @@ lrwxrwxrwx 1 username username 36 Apr 21 21:28 /home/username/.config/fish -> ..
 
 The majority of these configs are specific to Linux. But some are applicable to
 Windows. For these, indications should be available in a nested README.
-For instance, for Alacritty or Emacs, README ([alacritty](https://github.com/Aerion/dotfiles-public/tree/master/alacritty), [emacs](https://github.com/Aerion/dotfiles-public/tree/master/emacs)) describe
-how to use the configuration for Windows / WSL.

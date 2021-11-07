@@ -26,7 +26,6 @@ SETUVAR __fish_init_3_x:\x1d
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr__21_21_:sudo\x20ls
 SETUVAR _fish_abbr_cp:rsync\x20\x2dav\x20\x2d\x2dprogress
-SETUVAR _fish_abbr_em:emacsclient\x20\x2dt
 SETUVAR _fish_abbr_extend__tmp:sudo\x20mount\x20\x2do\x20remount\x2csize\x3d12G\x2cnoatime\x20/tmp
 SETUVAR _fish_abbr_ga:git\x20add
 SETUVAR _fish_abbr_gai:git\x20add\x20\x2d\x2dinteractive
@@ -50,7 +49,6 @@ SETUVAR _fish_abbr_l:exa\x20\x2d\x2dgroup\x2ddirectories\x2dfirst
 SETUVAR _fish_abbr_la:exa\x20\x2da
 SETUVAR _fish_abbr_ll:exa\x20\x2dlh\x20\x2d\x2dgroup\x2ddirectories\x2dfirst
 SETUVAR _fish_abbr_ls:exa
-SETUVAR _fish_abbr_magit:emacsclient\x20\x2dc\x20\x2dt\x20\x2d\x2deval\x20\x27\x28let\x20\x28\x28display\x2dbuffer\x2dalist\x20\x60\x28\x28\x22\x5e\x5c\x5c\x2amagit\x3a\x20\x22\x20display\x2dbuffer\x2dsame\x2dwindow\x29\x20\x2cdisplay\x2dbuffer\x2dalist\x29\x29\x29\x20\x28magit\x2dstatus\x29\x29\x27
 SETUVAR _fish_abbr_mv:mv\x20\x2div
 SETUVAR _fish_abbr_rm:timeout\x203\x20rm\x20\x2dIv\x20\x2d\x2done\x2dfile\x2dsystem
 SETUVAR _fish_abbr_streamlink:streamlink\x20\x2d\x2dplayer\x20mpv
