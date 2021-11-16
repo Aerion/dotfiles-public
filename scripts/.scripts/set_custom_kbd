@@ -1,3 +1,5 @@
 #!/bin/sh
 
+xkbcomp -w0 -I$HOME/.xkb -R$HOME/.xkb keymap/reset $DISPLAY
 xkbcomp -w0 -I$HOME/.xkb -R$HOME/.xkb keymap/custom $DISPLAY
+xset r rate 200 30
