@@ -64,3 +64,6 @@
 ⚰️	Remove dead code.	coffin
 🧪	Add a failing test.	test-tube
 👔	Add or update business logic	necktie
+🩺	Add or update healthcheck.	stethoscope
+🧱	Infrastructure related changes.	bricks
+🧑‍💻	Improve developer experience	technologist
