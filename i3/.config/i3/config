@@ -24,17 +24,6 @@ font pango:monospace 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-set $ws1 "1:"
-set $ws2 "2:"
-set $ws3 "3:"
-set $ws4 "4:"
-set $ws5 "5:"
-set $ws6 "6:"
-set $ws7 "7:"
-set $ws8 "8:"
-set $ws9 "9:"
-set $ws0 "10:"
-
 # use Windows key for $mod
 set $mod Mod4
 
@@ -123,28 +112,28 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws0
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 0
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws10
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws0
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 10
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 0
 
 bindsym $mod+a focus parent
 
@@ -226,7 +215,7 @@ client.focused_inactive $base01 $base01 $base05 $base03 $base01
 client.unfocused        $base01 $base00 $base05 $base01 $base01
 client.urgent           $base08 $base08 $base00 $base08 $base08
 client.placeholder      $base00 $base00 $base05 $base00 $base00
-client.background #000
+client.background #000000
 
 # Gaps
 smart_gaps on
@@ -240,28 +229,23 @@ for_window [class="Yad" title="yad-calendar"] floating enable
 for_window [class="floating-terminal"] floating enable, resize set 800 450, move position center
 
 # Specific workspaces
-assign [class="^[cC]hromium$"] $ws2
-assign [class="^[fF]irefox$"] $ws2
-assign [class="^Skype$"] $ws3
-assign [class="^Rambox*"] $ws3
-assign [class="^[sS]ignal*"] $ws3
-assign [class="^Thunderbird$"] $ws4
-assign [class="^mpv$"] $ws0
-assign [class="^MellowPlayer.?$"] $ws5
-assign [class="^KeePassXC"] $ws7
-assign [title="^[sS]team$"] $ws9
-assign [class="^Slay the Spire$"] $ws9
-assign [class="^looking-glass-client$"] $ws0
+assign [class="^[cC]hromium$"] number 2
+assign [class="^[fF]irefox$"] number 2
+assign [class="^Skype$"] number 3
+assign [class="^Rambox*"] number 3
+assign [class="^[sS]ignal*"] number 3
+assign [class="^Thunderbird$"] number 4
+assign [class="^mpv$"] number 10
+assign [class="^MellowPlayer.?$"] number 5
+assign [class="^KeePassXC"] number 7
+assign [title="^[sS]team$"] number 9
+assign [class="^Slay the Spire$"] number 9
+assign [class="^looking-glass-client$"] number 10
 
-workspace $ws0 output DVI-D-2
-
-exec --no-startup-id "i3-msg 'workspace 1:; append_layout ~/.i3/ws1.json'"
-exec --no-startup-id "i3-msg 'workspace 2:; append_layout ~/.i3/ws2.json'"
-exec --no-startup-id "i3-msg 'workspace 3:; append_layout ~/.i3/ws3.json'"
-exec --no-startup-id "i3-msg 'workspace 4:; append_layout ~/.i3/ws4.json'"
-exec --no-startup-id "i3-msg 'workspace 7:; append_layout ~/.i3/ws7.json'"
+workspace 10 output DVI-D-2
 
 # Startup applications
+exec_always --no-startup-id ~/.local/share/i3scripts/autoname_workspaces.py &
 exec_always --no-startup-id ~/.scripts/launch_polybar.sh
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 exec --no-startup-id sleep 10 && redshift-qt

@@ -1,3 +1,6 @@
 [submodule "polybar/.config/polybar/scripts/polybar-scripts"]
 	path = polybar/.config/polybar/scripts/polybar-scripts
 	url = git@github.com:Aerion/polybar-scripts.git
+[submodule "i3/.local/share/i3scripts"]
+	path = i3/.local/share/i3scripts
+	url = git@github.com:Aerion/i3scripts.git
