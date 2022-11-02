@@ -8,3 +8,4 @@
 /fish/.config/fish/functions/__*
 /fish/.config/fish/functions/fisher.fish
 /gtk/.config/gtk-3.0/bookmarks
+/micro/.config/micro/buffers/

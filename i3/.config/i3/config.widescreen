@@ -1,0 +1,2 @@
+include ~/.config/i3/base.conf
+include ~/.config/i3/workspaces_widescreen.conf
