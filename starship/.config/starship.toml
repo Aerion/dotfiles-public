@@ -23,3 +23,5 @@ when = 'test -n "$FISH_PRIVATE_MODE"'
 description = "Indicates that fish shell is in private mode"
 symbol = "🙈 "
 style = "purple"
+shell = 'sh'
+
