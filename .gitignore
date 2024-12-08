@@ -3,8 +3,9 @@
 /emacs/.emacs.d/recentf
 /emacs/.emacs.d/tramp
 /emacs/.emacs.d/transient
-/fish/.config/fish/completions/fisher.fish
+/fish/.config/fish/completions/
 /fish/.config/fish/conf.d
+/fish/.config/fish/functions/*nvm*
 /fish/.config/fish/functions/__*
 /fish/.config/fish/functions/fisher.fish
 /gtk/.config/gtk-3.0/bookmarks
